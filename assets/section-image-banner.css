@@ -398,6 +398,7 @@
 
 .banner__box > * + * {
   margin-top: 1rem;
+  display: none;
 }
 
 .banner__box > *:first-child {
