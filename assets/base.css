@@ -2953,7 +2953,7 @@ details-disclosure > details {
 }
 
 .gradient {
-      background: lightblue;
+      background: white;
 }
 
 @media screen and (forced-colors: active) {
