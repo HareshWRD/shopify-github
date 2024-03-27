@@ -1,0 +1,115 @@
+{% schema %}
+{
+  "name": "Image Slider",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image1",
+      "label": "Image 1"
+    },
+    {
+      "type": "textarea",
+      "id": "content1",
+      "label": "Content 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image2",
+      "label": "Image 2"
+    },
+    {
+      "type": "textarea",
+      "id": "content2",
+      "label": "Content 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image3",
+      "label": "Image 3"
+    },
+    {
+      "type": "textarea",
+      "id": "content3",
+      "label": "Content 3"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Slider with Content",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="image-slider">
+  <div class="slides">
+    <div class="slide">
+      <img src="{{ section.settings.image1 | img_url: 'medium' }}" alt="Image 1">
+      <div class="content">{{ section.settings.content1 }}</div>
+    </div>
+    <div class="slide">
+      <img src="{{ section.settings.image2 | img_url: 'medium' }}" alt="Image 2">
+      <div class="content">{{ section.settings.content2 }}</div>
+    </div>
+    <div class="slide">
+      <img src="{{ section.settings.image3 | img_url: 'medium' }}" alt="Image 3">
+      <div class="content">{{ section.settings.content3 }}</div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Add your CSS styling for the slider here */
+  .image-slider {
+    position: relative;
+    overflow: hidden;
+  }
+  .slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .slide {
+    flex: 0 0 auto;
+    width: 100%;
+    scroll-snap-align: start;
+    position: relative;
+  }
+  .slide img {
+    width: 100%;
+    height: auto;
+  }
+  .content {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+  }
+</style>
+
+<script>
+  // JavaScript for slider functionality
+  const slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+
+  function showSlide(n) {
+    slides[currentSlide].style.display = 'none';
+    currentSlide = (n + slides.length) % slides.length;
+    slides[currentSlide].style.display = 'block';
+  }
+
+  function nextSlide() {
+    showSlide(currentSlide + 1);
+  }
+
+  function prevSlide() {
+    showSlide(currentSlide - 1);
+  }
+
+  showSlide(currentSlide); // Show the first slide initially
+
+  setInterval(nextSlide, 5000); // Auto slide every 5 seconds
+</script>
