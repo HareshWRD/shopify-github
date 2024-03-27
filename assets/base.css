@@ -2480,7 +2480,9 @@ product-info .loading__spinner:not(.hidden) ~ *,
 
 .header__heading-link .h2 {
   line-height: 1;
-  color: rgba(var(--color-foreground), 0.75);
+  color: red;
+  font-size: 48px;
+  font-family: sans-serif;
 }
 
 .header__heading-logo {
