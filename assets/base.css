@@ -2953,9 +2953,7 @@ details-disclosure > details {
 }
 
 .gradient {
-  background: rgb(var(--color-background));
-  background: var(--gradient-background);
-  background-attachment: fixed;
+      background: lightblue;
 }
 
 @media screen and (forced-colors: active) {
