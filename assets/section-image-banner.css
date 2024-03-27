@@ -398,11 +398,12 @@
 
 .banner__box > * + * {
   margin-top: 1rem;
-  display: none;
+  
 }
 
 .banner__box > *:first-child {
   margin-top: 0;
+  display: none;
 }
 
 @media screen and (max-width: 749px) {
