@@ -83,26 +83,27 @@
         </div>
   
         <div class="form-field">
-          {% assign value = '' %}
-          {%- if form.phone -%}
-            {% assign value = form.phone %}
-          {%- elsif customer -%}
-            {% assign value = customer.phone %}
-          {%- endif -%}
-  
-          <input
-            class="form-field-input form-field-text {% if form.errors contains 'phone' %}form-field-error{% endif %}"
-            id="contact_phone"
-            name="contact[phone]"
-            type="tel"
-            pattern="[0-9]*"
-            oninput="this.value = this.value.replace(/[^0-9]/g, '');"
-            value="{{ value }}">
-  
-          <label class="form-field-title" for="contact_phone">
-            {{ 'contact.form.phone' | t }}
-          </label>
-        </div>
+            {% assign value = '' %}
+            {%- if form.phone -%}
+              {% assign value = form.phone %}
+            {%- elsif customer -%}
+              {% assign value = customer.phone %}
+            {%- endif -%}
+          
+            <input
+              class="form-field-input form-field-text {% if form.errors contains 'phone' %}form-field-error{% endif %}"
+              id="contact_phone"
+              name="contact[phone]"
+              type="tel"
+              pattern="[0-9]*" 
+              oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+              value="{{ value }}">
+          
+            <label class="form-field-title" for="contact_phone">
+              {{ 'contact.form.phone' | t }}
+            </label>
+          </div>
+          
   
         <div class="form-field">
           {% assign value = '' %}
