@@ -95,6 +95,8 @@
             id="contact_phone"
             name="contact[phone]"
             type="tel"
+            pattern="[0-9]*"
+            oninput="this.value = this.value.replace(/[^0-9]/g, '');"
             value="{{ value }}">
   
           <label class="form-field-title" for="contact_phone">
