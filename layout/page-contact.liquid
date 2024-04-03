@@ -105,6 +105,29 @@
               {{ 'contact.form.phone' | t }}
             </label>
           </div>
+          <div class="form-field">
+            {% assign value = '' %}
+            {%- if form.phone -%}
+              {% assign value = form.phone %}
+            {%- elsif customer -%}
+              {% assign value = customer.phone %}
+            {%- endif -%}
+          
+            <input
+              class="form-field-input form-field-text {% if form.errors contains 'phone' %}form-field-error{% endif %}"
+              id="contact_phone"
+              name="contact[phone]"
+              type="tel"
+             value="{{ value }}"
+             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+             title="Please enter a valid phone number format (e.g., 123-456-7890)"
+             required>
+            
+          
+            <label class="form-field-title" for="contact_phone">
+              {{ 'contact.form.phone' | t }}
+            </label>
+          </div>
           
   
         <div class="form-field">
