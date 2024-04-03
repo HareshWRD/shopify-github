@@ -95,9 +95,11 @@
               id="contact_phone"
               name="contact[phone]"
               type="tel"
-              pattern="[0-9]*" 
-              oninput="this.value = this.value.replace(/[^0-9]/g, '');"
-              value="{{ value }}">
+             value="{{ value }}"
+             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+             title="Please enter a valid phone number format (e.g., 123-456-7890)"
+             required>
+            
           
             <label class="form-field-title" for="contact_phone">
               {{ 'contact.form.phone' | t }}
