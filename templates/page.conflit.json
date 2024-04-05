@@ -1,0 +1,12 @@
+{
+    "sections": {
+      "main": {
+        "type": "page-conflit",
+        "settings": {
+        }
+      }
+    },
+    "order": [
+      "main"
+    ]
+  }
